@@ -1,7 +1,9 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import { useNavigate } from 'react-router-dom';
 import logo from './assets/toothless.png';
 
 export const Header = () => {
-  /* const navigate = useNavigate();
+  const navigate = useNavigate();
 
   function returnHome() {
     navigate('/home');
@@ -15,12 +17,17 @@ export const Header = () => {
     navigate('/home');
   }
 
-  } */
+  function register() {
+    navigate('/register');
+  }
 
   return (
     <nav className='navbar bg-light mb-4 p-0 flex'>
       <div className='container'>
-        <a className='navbar-brand'>
+        <a
+          className='navbar-brand'
+          onClick={returnHome}
+        >
           <div className='d-flex'>
             <img
               src={logo}
@@ -31,9 +38,9 @@ export const Header = () => {
           </div>
         </a>
         <div className='loginButtons'>
-          <button>Register</button>
-          <button>Login</button>
-          <button>Log out</button>
+          <button onClick={register}>Register</button>
+          <button onClick={login}>Login</button>
+          <button onClick={logout}>Log out</button>
         </div>
       </div>
     </nav>
