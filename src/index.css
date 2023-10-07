@@ -1,13 +1,216 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: 'Kameron';
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html *
+{
+  font-family: 'Kameron', sans-serif!important;
 }
+
+#root{
+  margin:0;
+  padding:0;
+  min-height: 100vh;
+  background-image: url("../src/components/assets/toothless_background.jpg");
+  background-position: center;
+  background-size: cover;
+
+  --primaryColor: #ffae5e;
+  --secondaryColor: #fea44a;
+  --primaryTextColor: #040079;
+  --primaryBorderColor: 2px solid white;
+}
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow:hidden;
+}
+
+.navbar-brand {
+  color: var(--primaryTextColor);
+}
+
+.loginButtons button {
+  background-color: var(--primaryColor);
+  color: var(--primaryTextColor);
+  border: none;
+  border-radius: 4px;
+  height: 2.5rem;
+  margin:0.2rem;
+}
+
+.navbar-brand:hover {
+  color: var(--primaryColor);
+  cursor:pointer;
+}
+
+.navbar-brand img {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.btn {
+  font-size: 15px;
+}
+
+.btn-primary:hover {
+  background-color: var(--primaryColor);
+  opacity: 0.9;
+}
+
+.icon {
+  margin-right: 5px;
+}
+
+.header {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 2.5rem;
+}
+
+.searchDragons{
+  background: var(--primaryColor);
+  color: var(--primaryTextColor);
+  border-radius: 4px;
+  height: 2.5rem;
+  border: none;
+}
+
+.searchDragons:hover{
+  border: var(--primaryBorderColor);
+}
+
+.searchDragons:focus{
+  border: var(--primaryBorderColor);
+  outline: none;
+}
+
+.searchDragons::placeholder{
+  transition: transform 0.2s ease-in-out;
+  color: var(--secondaryTextColor);
+  font-size: large;
+  text-align: center;
+  opacity: 0.6;
+}
+
+.addDragonBtn{
+  height: fit-content;
+  color: var(--primaryTextColor);
+  font-size: large;
+}
+
+.addDragonBtn:hover{
+  border: var(--primaryBorderColor);
+  color: var(--primaryTextColor)
+}
+
+.dragonRow{
+  margin-top: 8px;
+}
+
+fieldset {
+  border: var(--primaryBorderColor) !important;
+}
+
+#grouped-demo-label{
+  color: var(--primaryTextColor);
+  font-size: large;
+}
+
+div.MuiFormControl-root{
+  margin-bottom: 10px;
+  background-color: var(--primaryColor);
+  border-radius: 4px;
+}
+
+div.MuiInputBase-root{
+  color: var(--primaryTextColor);
+}
+
+div.MuiCardContent-root{
+  padding-bottom: 0.8rem!important;
+}
+.dragonStatsIcon {
+  height: 25px;
+  width: 25px;
+}
+
+.rowStats{
+  display: flex;
+  align-items: center;
+}
+
+.card-text{
+  margin-left:20px;
+}
+
+.dragonCardContainer{
+  margin-top:2rem;
+  overflow:auto;
+  max-height: 84vh;
+  justify-content: space-evenly;
+  column-gap: 1rem;
+  padding:0.2rem;
+}
+
+.dragonCardIndividual{
+  font-size: large;
+  background-color: var(--primaryColor)!important;
+  color: var(--primaryTextColor)!important;
+  max-width: 18%;
+  text-align: center;
+  border-radius: 30px!important;
+  border: var(--primaryBorderColor);
+}
+
+.dragonCardIndividual:hover{
+  transition: transform 0.2s ease-in-out;
+  transform: translateY(-5px);
+  background-color: #fea44a!important;
+  cursor: pointer;
+}
+
+.dragonImage{
+  box-shadow: -1px 6px 12px 1px rgba(69,69,69,0.49);
+  border-radius: 10px;
+  margin-bottom: 0.4rem;
+}
+
+.dragonStatsInfo{
+  margin-left: 1rem;
+}
+
+.dragonFamily{
+  font-size: medium;
+  font-weight: 300;
+}
+
+.dragonName{
+  font-size: large;
+  font-weight: 600;
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 20px;;
+  margin-top: 20px;
+}
+ 
+
+::-webkit-scrollbar-thumb {
+  background: var(--primaryColor);
+  height:70%;
+  border-radius: 10px;
+}
+
